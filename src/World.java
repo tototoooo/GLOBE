@@ -6,13 +6,13 @@ import static java.lang.Math.*;
 
 public class World {
     ArrayList<Airports> aeroList;
-    public ArrayList<Airports> getaeroList() {
+    public ArrayList<Airports> getAeroList() {
         return aeroList;
     }
 
 
     public World(String fileName) {
-        ArrayList<Airports> listAirports = new ArrayList<Airports>();
+        aeroList = new ArrayList<Airports>();
         try {
             BufferedReader buf = new BufferedReader(new FileReader(fileName));
             String s = buf.readLine();
@@ -22,8 +22,9 @@ public class World {
                 String fields[] = s.split(",");
 // Une bonne id´ee : placer un point d'arr^et ici pour du debuggage.
                 if (fields[1].equals("large_airport")) {
+                    Airports a;
 
-                    Airports aero1= new Airports( fields[9], fields[2], fields[5], Double.parseDouble(fields[11]),Double.parseDouble(fields[12]));
+                    aeroList.add (a = new Airports( fields[9], fields[2], fields[5], Double.parseDouble(fields[11]),Double.parseDouble(fields[12])));
                 }
                 s = buf.readLine();
             }
@@ -31,7 +32,7 @@ public class World {
 
         catch(Exception e){
             System.out.println("Maybe the file isn't there ?");
-            System.out.println(aeroList.get(aeroList.size() - 1));
+            System.out.println(aeroList.get(aeroList.size()-1));
             e.printStackTrace();
         }
 

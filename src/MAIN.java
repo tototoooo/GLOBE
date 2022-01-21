@@ -11,8 +11,8 @@ public class MAIN {
         System.out.println(aero2.toString());
         //System.out.println("Nombre d'aréoports : " +aero1.getNumber());
         //etu2 = null;
-        World w = new World ("./data/airport-codes_no_comma.csv");
-        System.out.println("Found "+w.getaeroList().size()+" airports.");
+        World w = new World ("Resources/airport-codes_no_comma.csv");
+        System.out.println("Found "+w.getAeroList().size()+" airports.");
         Airports paris = w.findNearestAirport(2.316,48.866);
         Airports cdg = w.findByCode("CDG");
         double distance = w.distance(2.316,48.866,paris.getLongitude(),paris.getLatitude());
