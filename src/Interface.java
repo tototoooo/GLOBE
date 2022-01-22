@@ -2,13 +2,18 @@ import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.PerspectiveCamera;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.input.MouseButton;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.input.PickResult;
 import javafx.scene.layout.Pane;
+import javafx.scene.paint.Color;
+import javafx.scene.paint.ImagePattern;
 import javafx.scene.transform.Rotate;
 import javafx.scene.transform.Translate;
 import javafx.stage.Stage;
+
+
 public class Interface extends Application {
     private Double mouseposX = 0.0;
     private Double mouseposY = 0.0;
@@ -20,6 +25,7 @@ public class Interface extends Application {
         Earth root = new Earth();
         Pane pane = new Pane(root);
         Scene theScene = new Scene(pane, 600, 400,false);
+        theScene.setFill(new ImagePattern(new Image("file:ressources_java/téléchargement.png")));
         primaryStage.setScene(theScene);
         PerspectiveCamera camera = new PerspectiveCamera(true);
         camera.setTranslateZ(-1000);
@@ -44,9 +50,10 @@ public class Interface extends Application {
                     longitude = 360*(getX-0.5);
                     latitude = Math.toDegrees(Math.atan(Math.exp((0.5-getY)/0.2678)-Math.PI/2));
                     System.out.println("long="+longitude + " lat=" + latitude);
-                    World w = new World("C:Users/DIARIETOU/IdeaProjects/Resources/airport-codes_no_comma.csv");
-                    near = w.findNearestAirport(longitude ,latitude);
+                    World w = new World("ressources_java/airport-codes_no_comma.csv");
+                    near = w.findNearestAirport(longitude, latitude);
                     System.out.println(near);
+                    root.displayRedSphere(near);
                 }
             }
         });
