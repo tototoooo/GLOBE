@@ -50,7 +50,7 @@ public class Interface extends Application {
                     longitude = 360*(getX-0.5);
                     latitude = Math.toDegrees(Math.atan(Math.exp((0.5-getY)/0.2678)-Math.PI/2));
                     System.out.println("long="+longitude + " lat=" + latitude);
-                    World w = new World("ressources_java/airport-codes_no_comma.csv");
+                    World w = new World("C:Users/DIARIETOU/IdeaProjects/Resources/airport-codes_no_comma.csv");
                     near = w.findNearestAirport(longitude, latitude);
                     System.out.println(near);
                     root.displayRedSphere(near);
