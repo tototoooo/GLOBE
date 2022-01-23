@@ -1,11 +1,14 @@
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.lang.Math;
+
 
 import static java.lang.Math.*;
 
 public class World {
     ArrayList<Airports> aeroList;
+
     public ArrayList<Airports> getAeroList() {
         return aeroList;
     }
@@ -24,28 +27,30 @@ public class World {
                 if (fields[1].equals("large_airport")) {
                     Airports a;
 
-                    aeroList.add (a = new Airports( fields[9], fields[2], fields[5], Double.parseDouble(fields[11]),Double.parseDouble(fields[12])));
+                    aeroList.add(a = new Airports(fields[9], fields[2], fields[5], Double.parseDouble(fields[11]), Double.parseDouble(fields[12])));
                 }
                 s = buf.readLine();
             }
-        }
-
-        catch(Exception e){
+        } catch (Exception e) {
             System.out.println("Maybe the file isn't there ?");
-            System.out.println(aeroList.size()-1);
+            System.out.println(aeroList.size() - 1);
             e.printStackTrace();
         }
 
     }
-    public Airports findByCode(String code){
-        for( Airports aero : aeroList){
-            if(aero.getIATA().equals(code)){
+
+
+
+    public Airports findByCode(String code) {
+        for (Airports aero : aeroList) {
+            if (aero.getIATA().equals(code)) {
                 return aero;
+                }
             }
+            System.out.println("Le code IATA ne correspond à aucun aeroport");
+            return null;
         }
-        System.out.println("Le code IATA ne correspond à aucun aeroport");
-        return null;
-    }
+
 
     public Airports findNearestAirport(double lon, double lat){
         double dist = distance(lon,lat,aeroList.get(0).getLongitude(),aeroList.get(0).getLatitude());
@@ -67,7 +72,4 @@ public class World {
         double norme = pow(la2 - la1, 2) + pow((lo2 - lo1) * cos(toRadians((la2 + la1) / 2)), 2);
         return norme;
     }
-
-
 }
-

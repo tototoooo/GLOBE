@@ -38,7 +38,7 @@ public class Earth extends Group {
 
         PhongMaterial pm = new PhongMaterial();
         try {
-            Image im = new Image("file:///C:/Users/DIARIETOU/IdeaProjects/Resources/earth_lights_4800.png");
+            Image im = new Image("file:///C:/Users/DIARIETOU/IdeaProjects/GLOBE/Resources/earth_lights_4800.png");
             pm.setSpecularMap(im);
             pm.setDiffuseMap(im);
             pm.setSelfIlluminationMap(im);
