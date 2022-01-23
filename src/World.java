@@ -32,7 +32,7 @@ public class World {
 
         catch(Exception e){
             System.out.println("Maybe the file isn't there ?");
-            System.out.println(aeroList.get(aeroList.size()-1));
+            System.out.println(aeroList.size()-1);
             e.printStackTrace();
         }
 

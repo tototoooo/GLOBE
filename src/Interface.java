@@ -44,7 +44,7 @@ public class Interface extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception {
         World w = new World ("file:///C:/Users/DIARIETOU/IdeaProjects/Resources/airport-codes_no_comma.csv");
-        primaryStage.setTitle("La terre !");
+        primaryStage.setTitle("Hello World !");
         Earth terre = new Earth();
         Group root = terre;
         Scene theScene = new Scene(root, 600, 400, true);
