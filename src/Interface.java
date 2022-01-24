@@ -43,7 +43,7 @@ public class Interface extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception {
-        World w = new World ("C:/Users/DIARIETOU/IdeaProjects/GLOBE/Resources/airport-codes_no_comma.csv");
+        World w = new World ("./Resources/airport-codes_no_comma.csv");
         primaryStage.setTitle("Hello World !");
         Earth terre = new Earth();
         Group root = terre;
