@@ -15,7 +15,7 @@ public class MAIN {
         System.out.println(aero2.toString());
         //System.out.println("Nombre d'aréoports : " +aero1.getNumber());
         //etu2 = null;
-        World w = new World ("C:/Users/DIARIETOU/IdeaProjects/GLOBE/Resources/airport-codes_no_comma.csv");
+        World w = new World ("./Resources/airport-codes_no_comma.csv");
         System.out.println("Found "+w.getAeroList().size()+" airports.");
         Airports paris = w.findNearestAirport(2.316,48.866);
         Airports cdg = w.findByCode("CDG");
@@ -26,7 +26,7 @@ public class MAIN {
         System.out.println(cdg);
         System.out.println(distanceCDG);
         try {
-            BufferedReader br = new BufferedReader(new FileReader("C:/Users/DIARIETOU/IdeaProjects/GLOBE/Resources/JsonOrly.txt"));
+            BufferedReader br = new BufferedReader(new FileReader("./Resources/JsonOrly.txt"));
             String test = br.readLine();
             /*JsonFlightFiller jSonFlightFiller = new JsonFlightFiller(test,w);*/
         }
